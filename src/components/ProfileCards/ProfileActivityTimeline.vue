@@ -1,20 +1,14 @@
 <script setup>
 import {users, showUsers} from '@/assets/data/usersData';
 import { ref } from 'vue';
+import ContainerMembers from '../vbase/Container-members.vue';
 
 //Imagenes que deseo mostrar
-const numberOfImages = 3; 
+const numberOfImages = 4; 
 //Data hasta donde la necesito
 const updatedData = showUsers(users, numberOfImages); 
 //Data restante
-const count = ref(users.length - numberOfImages); 
-
-console.log(count);
-
-
-
-
-console.log(updatedData);
+const count = ref(users.length - numberOfImages);
 </script>
 <template>
   <div class="activity-container">
@@ -49,10 +43,16 @@ console.log(updatedData);
       <div class="content">
         <h5>Lorem ipsum dolor sit amet.</h5>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
-        <div class="container-members">
-          <div v-for="(item , index) in updatedData" :key="index"><img :src="item.foto" :alt="user" /></div>
-          <div>+{{ count }}</div>
-        </div>
+
+
+
+        <ContainerMembers :format-list="updatedData" :count="count" />
+
+
+
+
+
+
       </div>
       <span>12 min ago</span>
     </div>
@@ -89,26 +89,7 @@ console.log(updatedData);
             border-radius: 100%;
         }
       }
-      .container-members {
-        display: flex;
-        div {
-          border: 2px solid $primary-color;
-          background: $secondary-color;
-          width: 3.25rem;
-          height: 3.25rem;
-          border-radius: 100%;
-          margin-left: -20px; 
-          @include flex-center;
-        }
-        div:first-child{
-            margin-left: 0px;
-        }
-        img {
-          border-radius: 100%;
-          width: 99%;
-          height: 99%;
-        }
-      }
+
     }
   }
 }
