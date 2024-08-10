@@ -27,8 +27,6 @@ const changeSection = (section) => {
       <!-- Mostrar la sección activa -->
       <div v-if="activeSection === 'profile'">
         <Profile />
-        <banner/>
-        <banner/>
       </div>
       <div v-if="activeSection === 'team'">
         <Team />

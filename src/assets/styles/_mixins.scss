@@ -1,10 +1,33 @@
 @mixin box-shadow($color) {
-    box-shadow: 0 2px 6px $color;
-  }
-  
+  box-shadow: 0 2px 6px $color;
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-  
+
+@mixin structure {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  gap: 1.25rem;
+  font-size: $t2;
+  border-radius: 0.6125rem;
+  box-shadow: 0 5px 6px $shadow-color;
+  color: $secondary-color;
+  background: $primary-color;
+}
+
+@mixin div-image-format {
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 100%;
+}
+
+@mixin subtitle-format {
+  font-weight: bold ;
+  color: $secondary-color;
+  font-size: $t2; 
+}

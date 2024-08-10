@@ -1,15 +1,48 @@
 <script setup>
-import ProfileCard from './ProfileCard.vue';
+import ProfileAbout from './ProfileCards/ProfileAbout.vue';
+import ProfileActivityTimeline from './ProfileCards/ProfileActivityTimeline.vue';
+import ProfileConnection from './ProfileCards/ProfileConnection.vue';
 
 
 </script>
 
 <template>
-    <div>
-        <ProfileCard/>
+    <div class="profile">
+        <div class="left-section">
+            <ProfileAbout class="profile_about"/>
+        </div>
+
+        <div class="right-section">
+            <ProfileActivityTimeline class="profile_activity_timeline"/>
+            <div class="min-section">
+                <ProfileConnection class="proof"/>
+                <div class="proof"/>
+            </div>
+
+        </div>
+
     </div>
 </template>
 
 <style lang="scss" scoped>
-    
+    .profile{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .left-section{
+            width: 25% ;
+        }
+        .right-section{
+            width: 70%;
+            .min-section{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                display: flex;
+                .proof{
+                    width: 48%;
+                }
+            }
+        }
+    }
 </style>
