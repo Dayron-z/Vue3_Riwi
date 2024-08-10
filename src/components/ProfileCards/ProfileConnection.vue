@@ -1,4 +1,5 @@
 <script setup>
+import Base from '../vbase/Base.vue';
 import { ref } from "vue";
 import { users, showUsers } from "@/assets/data/usersData";
 const numberOfUsers = 5;
@@ -16,121 +17,49 @@ const toggleRequest = (item) => {
 };
 </script>
 <template>
-  <div class="connections_container">
-    <div class="connections_header">
-      <span>Connection</span>
-      <i class="bi bi-three-dots-vertical"></i>
-    </div>
-    <div class="connections">
-      <div class="connection" v-for="(item, index) in updatedData" :key="index">
-        <div class="left-section">
-          <div class="user-info">
-            <img src="/src/assets/images/man_banner.jpg" alt="" />
-            <div class="info">
-              <h5>{{ item.nombre }}</h5>
-              <p>connections: {{ item.conexiones }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="rigth-section">
-          <div
-            class="state"
-            @click="toggleRequest(item)"
-            :class="{ active: item.isRequestSent }"
-          >
-            <i
-              :class="
-                item.isRequestSent ? 'bi bi-person-check' : 'bi bi-person-x'
-              "
-            ></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="more-connections">
-      <p>View all connections</p>
-    </div>
+  <Base :format-list="updatedData" :name="`nombre`"  :attribute="`conexiones`" :title_attribute="`Conecctions`"  :card_title="`Connections`">
+  <template  v-slot:extraButton="{ item }">
+    <div
+    class="state"
+    @click="toggleRequest(item)"
+    :class="{active: item.isRequestSent}"
+  >
+    <i
+      :class="
+        item.isRequestSent ? 'bi bi-person-check' : 'bi bi-person-x'
+      "
+    ></i>
   </div>
+  </template>
+  </Base>
 </template>
 <style lang="scss" scoped>
 @import "/src/assets/styles/variable";
 @import "/src/assets/styles/mixins";
 
-.connections_container {
-  @include structure;
-  border: 2px solid $secondary-color;
+.state {
+  cursor: pointer;
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  background: $purple-color; // Estilo por defecto
 
-  .connections_header {
-    display: flex;
-    justify-content: space-between;
+  i {
+    color: $primary-color;
+    font-size: 20px;
   }
 
-  .connections {
-    .connection {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; // Alinea verticalmente los elementos hermanos
-
-      .left-section {
-        display: flex;
-        justify-content: space-between;
-
-        .user-info {
-          gap: 0.625rem;
-          display: flex;
-
-          .info {
-            h5 {
-              align-self: self-start;
-              @include subtitle-format;
-            }
-
-            p {
-              font-size: $t3;
-            }
-
-            @include flex-center;
-            flex-direction: column;
-          }
-
-          img {
-            @include div-image-format;
-          }
-        }
-      }
-
-      .rigth-section {
-        @include flex-center;
-
-        .state {
-          cursor: pointer;
-          @include flex-center;
-          width: 40px;
-          height: 40px;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-          background: $purple-color; // Estilo por defecto
-
-          i {
-            color: $primary-color;
-            font-size: 20px;
-          }
-
-          &.active {
-            background: $shadow-button-color;
-            i {
-              color: $purple-color;
-            }
-            // Color de fondo cuando el estado es activo
-          }
-        }
-      }
+  &.active {
+    background: $shadow-button-color;
+    i {
+      color: $purple-color;
     }
-  }
-
-  .more-connections {
-    color: $purple-color;
-    @include flex-center;
+    // Color de fondo cuando el estado es activo
   }
 }
 </style>
+
+
+

@@ -2,6 +2,7 @@
 import ProfileAbout from './ProfileCards/ProfileAbout.vue';
 import ProfileActivityTimeline from './ProfileCards/ProfileActivityTimeline.vue';
 import ProfileConnection from './ProfileCards/ProfileConnection.vue';
+import ProfileTeams from './ProfileCards/ProfileTeams.vue';
 
 
 </script>
@@ -16,7 +17,7 @@ import ProfileConnection from './ProfileCards/ProfileConnection.vue';
             <ProfileActivityTimeline class="profile_activity_timeline"/>
             <div class="min-section">
                 <ProfileConnection class="proof"/>
-                <div class="proof"/>
+                <ProfileTeams class="proof"/>
             </div>
 
         </div>

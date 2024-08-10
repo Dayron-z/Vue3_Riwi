@@ -31,3 +31,25 @@
   color: $secondary-color;
   font-size: $t2; 
 }
+
+
+@mixin design-developer{
+  background-color: rgb(255, 227, 229);
+  color:rgb(252, 106, 108) ;
+}
+
+
+@mixin design-support{
+  background-color:rgb(232, 230, 252) ;
+  color:rgb(146, 136, 242) ;
+}
+
+@mixin design-designer{
+  background-color:rgb(215, 244, 247) ;
+  color:rgb(82, 208, 222) ;
+}
+
+@mixin design-marketing{
+  background-color:rgb(235, 236, 237) ;
+  color: rgb(152, 155, 166);
+}
