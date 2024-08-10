@@ -1,5 +1,4 @@
 <script setup>
-
 // Recibir la prop de la sección activa (La cual se nos proporciona)
 defineProps ({
   activeSection: String

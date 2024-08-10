@@ -1,12 +1,18 @@
 <script setup>
 import { ref } from "vue";
 import { users, showUsers } from "@/assets/data/usersData";
-const numberOfUsers = 4;
+const numberOfUsers = 5;
 const updatedData = ref(showUsers(users, numberOfUsers));
 
 // Función para hacer toggle al estado de un usuario
+
+// 3. ¿Por qué es booleano?:
+// El operador ! (negación lógica) convierte el valor en su opuesto booleano.
+// Si item.isRequestSent no existía antes, su valor inicial sería undefined. Al aplicar ! a undefined, se convierte en true.
+// Después, cuando vuelvas a ejecutar la misma línea, item.isRequestSent ya tendrá un valor booleano (true o false), y el operador ! cambiará ese valor al opuesto.
 const toggleRequest = (item) => {
   item.isRequestSent = !item.isRequestSent;
+  console.log(item);
 };
 </script>
 <template>
@@ -25,18 +31,18 @@ const toggleRequest = (item) => {
               <p>connections: {{ item.conexiones }}</p>
             </div>
           </div>
-          <div class="rigth-section">
-            <div
-              class="state"
-              @click="toggleRequest(item)"
-              :class="{ active: item.isRequestSent }"
-            >
-              <i
-                :class="
-                  item.isRequestSent ? 'bi bi-person-check' : 'bi bi-person-x'
-                "
-              ></i>
-            </div>
+        </div>
+        <div class="rigth-section">
+          <div
+            class="state"
+            @click="toggleRequest(item)"
+            :class="{ active: item.isRequestSent }"
+          >
+            <i
+              :class="
+                item.isRequestSent ? 'bi bi-person-check' : 'bi bi-person-x'
+              "
+            ></i>
           </div>
         </div>
       </div>
@@ -46,7 +52,7 @@ const toggleRequest = (item) => {
     </div>
   </div>
 </template>
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 @import "/src/assets/styles/variable";
 @import "/src/assets/styles/mixins";
 
@@ -61,6 +67,10 @@ const toggleRequest = (item) => {
 
   .connections {
     .connection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; // Alinea verticalmente los elementos hermanos
+
       .left-section {
         display: flex;
         justify-content: space-between;
@@ -99,16 +109,19 @@ const toggleRequest = (item) => {
           height: 40px;
           border-radius: 5px;
           transition: background-color 0.3s ease;
+          background: $purple-color; // Estilo por defecto
 
-          // Estilo por defecto
-          background: $purple-color;
           i {
             color: $primary-color;
             font-size: 20px;
           }
 
           &.active {
-            background: $secondary-color; // Color de fondo cuando el estado es activo
+            background: $shadow-button-color;
+            i {
+              color: $purple-color;
+            }
+            // Color de fondo cuando el estado es activo
           }
         }
       }

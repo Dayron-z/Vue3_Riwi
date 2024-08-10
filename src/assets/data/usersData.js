@@ -21,6 +21,11 @@ const users = [
         nombre: "Javier", 
         foto: '/src/assets/images/man_banner.jpg', 
         conexiones: 621
+    }, 
+    {
+        nombre: "Javier", 
+        foto: '/src/assets/images/man_banner.jpg', 
+        conexiones: 621
     }
 ] 
 
