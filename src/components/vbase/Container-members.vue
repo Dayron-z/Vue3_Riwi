@@ -26,8 +26,9 @@ const props = defineProps({
 .container-members {
   display: flex;
   div {
+    color: $black;
     border: 2px solid $primary-color;
-    background: $secondary-color;
+    background: $shadow-button-color;
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 100%;

@@ -1,4 +1,5 @@
 <script setup>
+import BaseLeftSection from "./InfoContainer.vue";
 import { defineProps } from "vue";
 
 const props = defineProps({
@@ -32,22 +33,18 @@ const props = defineProps({
       <i class="bi bi-three-dots-vertical"></i>
     </div>
     <div class="connections">
-      <div class="connection" v-for="(item, index) in formatList" :key="index">
-        <div class="left-section">
-          <div class="user-info">
-            <img :src="item.foto" alt="" />
-            <div class="info">
-              <!-- Acceso dinámico a las propiedades del objeto item -->
-              <h5>{{ item[name] }}</h5>
-              <p>{{item[attribute]}} {{title_attribute}} </p>
-            </div>
-          </div>
-        </div>
-        <div class="rigth-section">
-          <!-- Inyección del contenido del slot -->
+      <BaseLeftSection
+        :formatList="formatList"
+        :name="name"
+        :title_attribute="title_attribute"
+        :attribute="attribute"
+      >
+        <template v-slot:extraButton="{ item }">
           <slot name="extraButton" :item="item"></slot>
-        </div>
-      </div>
+        </template>
+      </BaseLeftSection>
+
+
     </div>
     <div class="more-connections">
       <p>View all connections</p>
@@ -67,69 +64,69 @@ const props = defineProps({
     justify-content: space-between;
   }
 
-  .connections {
-    .connection {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; // Alinea verticalmente los elementos hermanos
+  // .connections {
+  //   .connection {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center; // Alinea verticalmente los elementos hermanos
 
-      .left-section {
-        display: flex;
-        justify-content: space-between;
+  //     .left-section {
+  //       display: flex;
+  //       justify-content: space-between;
 
-        .user-info {
-          gap: 0.625rem;
-          display: flex;
+  //       .user-info {
+  //         gap: 0.625rem;
+  //         display: flex;
 
-          .info {
-            h5 {
-              @include subtitle-format;
-              align-self: start;
-            }
+  //         .info {
+  //           h5 {
+  //             @include subtitle-format;
+  //             align-self: start;
+  //           }
 
-            p {
-              font-size: $t3;
-              align-self: start;
-            }
+  //           p {
+  //             font-size: $t3;
+  //             align-self: start;
+  //           }
 
-            @include flex-center;
-            flex-direction: column;
-          }
+  //           @include flex-center;
+  //           flex-direction: column;
+  //         }
 
-          img {
-            @include div-image-format;
-          }
-        }
-      }
+  //         img {
+  //           @include div-image-format;
+  //         }
+  //       }
+  //     }
 
-      .rigth-section {
-        @include flex-center;
+  //     .rigth-section {
+  //       @include flex-center;
 
-        .state {
-          cursor: pointer;
-          @include flex-center;
-          width: 40px;
-          height: 40px;
-          border-radius: 5px;
-          transition: background-color 0.3s ease;
-          background: $purple-color; // Estilo por defecto
+  //       .state {
+  //         cursor: pointer;
+  //         @include flex-center;
+  //         width: 40px;
+  //         height: 40px;
+  //         border-radius: 5px;
+  //         transition: background-color 0.3s ease;
+  //         background: $purple-color; // Estilo por defecto
 
-          i {
-            color: $primary-color;
-            font-size: 20px;
-          }
+  //         i {
+  //           color: $primary-color;
+  //           font-size: 20px;
+  //         }
 
-          &.active {
-            background: $shadow-button-color;
-            i {
-              color: $purple-color;
-            }
-            // Color de fondo cuando el estado es activo
-          }
-        }
-      }
-    }
-  }
+  //         &.active {
+  //           background: $shadow-button-color;
+  //           i {
+  //             color: $purple-color;
+  //           }
+  //           // Color de fondo cuando el estado es activo
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   .more-connections {
     color: $purple-color;
