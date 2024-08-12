@@ -3,7 +3,8 @@ import ContainerMembers from "../vbase/Container-members.vue";
 import { teams, showUsers } from "@/assets/data/usersData";
 import { ref } from "vue";
 import Progress from "../vbase/Progress.vue";
-const numberOfTeams = 3;
+const numberOfTeams = 4;
+const count = ref(teams.length - numberOfTeams);
 const updatedData = showUsers(teams, numberOfTeams);
 
 const progress = ref(50);
@@ -47,7 +48,7 @@ const progress = ref(50);
             <td>
               <ContainerMembers
                 :format-list="updatedData"
-                :count="numberOfTeams"
+                :count="count"
               ></ContainerMembers>
             </td>
             <td>
@@ -56,10 +57,26 @@ const progress = ref(50);
                 <span>%{{ progress }}</span>
               </div>
             </td>
-            <td><i class="bi bi-three-dots-vertical"></i></td>
+            <td>
+              <div class="icon">
+                <i class="bi bi-three-dots-vertical"></i>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
+    </div>
+    <hr />
+    <div class="footer">
+      <span>Showing 1 to 5 of 7 entries</span>
+      <div class="page-container">
+        <div>&lt;&lt;</div>
+        <div>&lt;</div>
+        <div>1</div>
+        <div>2</div>
+        <div>&gt;</div>
+        <div>&gt;&gt;</div>
+      </div>
     </div>
   </div>
 </template>
@@ -72,8 +89,29 @@ const progress = ref(50);
   .header {
     display: flex;
     justify-content: space-between;
+    span {
+      font-size: 1.1125rem;
+      color: $secondary-color;
+    }
+    input {
+      padding: 0.45rem;
+      width: 16.25rem;
+      height: 2.425rem;
+      border-radius: 5px;
+      border: 0.0125rem solid $shadow-button-color;
+      color: $secondary-color;
+      &::placeholder {
+        border: none;
+        color: #999; // Color del texto del placeholder
+        font-style: italic; // Estilo del texto del placeholder
+        font-size: 0.9rem; // Tamaño del texto del placeholder
+        opacity: 1; // Controla la opacidad (0 es transparente, 1 es opaco)
+      }
+      &:focus::placeholder {
+        color: $secondary-color; // Cambia el color del placeholder cuando el input está en foco
+      }
+    }
   }
-
   .table {
     width: 100%;
     table {
@@ -127,6 +165,11 @@ const progress = ref(50);
           display: flex;
           gap: 10px;
         }
+        .icon {
+          display: flex;
+          justify-content: center;
+          padding-right: 1.25rem;
+        }
       }
 
       // Selecciona todas las filas, tanto del encabezado como del cuerpo
@@ -139,6 +182,22 @@ const progress = ref(50);
       //       background: #ececec; // Color para las filas pares
       //     }
       //   }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    .page-container {
+      display: flex;
+      gap: 5px;
+      div {
+        @include flex-center;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-color: $shadow-button-color;
+      }
     }
   }
 }
