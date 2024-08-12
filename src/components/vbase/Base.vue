@@ -57,7 +57,6 @@ const props = defineProps({
 
 .connections_container {
   @include structure;
-  border: 2px solid $secondary-color;
 
   .connections_header {
     display: flex;

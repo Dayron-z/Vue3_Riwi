@@ -18,7 +18,7 @@ const changeSection = (section) => {
 <template>
    <main class="main">
     <section class="principal_section">
-      <SearchBar />
+      <SearchBar class="search-bar" />
       <Banner />
       
       <!-- Pasar la sección activa como prop al componente de navegación -->
