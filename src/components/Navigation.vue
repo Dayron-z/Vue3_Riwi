@@ -51,6 +51,9 @@ defineProps ({
     gap: 20px;
     padding: 0.225rem;
     transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 
     &.active {
       background-color: $purple-color; /* Color de fondo del botón activo */

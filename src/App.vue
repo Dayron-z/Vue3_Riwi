@@ -42,5 +42,9 @@ const changeSection = (section) => {
 </template>
 
 <style lang="scss">
+.principal_section{
+  display: flex;
+  gap: 20px;
+}
 /* Aquí puedes agregar tus estilos SCSS */
 </style>

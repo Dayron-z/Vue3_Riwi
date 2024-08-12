@@ -15,7 +15,6 @@
     box-sizing: border-box;
     font-family: var(--poppins);
     font-weight: 400;
-    gap: $general-gap;
 }
 
 body{
@@ -35,9 +34,5 @@ body{
     flex-direction: column;
     justify-content: center;
     width: 75%;
-}
-
-.search-bar{
-    margin-bottom: 1.5rem;
 }
 

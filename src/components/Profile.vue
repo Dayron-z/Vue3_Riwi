@@ -37,19 +37,19 @@ import ProfileOverview from "./ProfileCards/ProfileOverview.vue";
     width: 25%;
     display: flex;
     flex-direction: column;
-    // gap: $general-gap;
+    gap: $general-gap;
   }
   .right-section {
     width: 73%;
     display: flex;
     flex-direction: column;
-    // gap: $general-gap;
+    gap: $general-gap;
     .min-section {
       display: flex;
       justify-content: space-between;
       width: 100%;
       display: flex;
-    //   gap: $general-gap;
+      gap: $general-gap;
       .split {
         width: 50%;
       }
