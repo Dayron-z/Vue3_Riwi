@@ -6,9 +6,10 @@ import Banner from './components/Banner.vue';
 import Profile from './components/Profile.vue';
 import Navigation from './components/Navigation.vue';
 import Projects from './components/Projects.vue';
+import Team from './components/Team.vue';
 
 // Definir estado reactivo
-const activeSection = ref('profile');
+const activeSection = ref('projects');
 
 const changeSection = (section) => {
   activeSection.value = section;

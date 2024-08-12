@@ -16,7 +16,7 @@ const props = defineProps({
     <div v-for="(item, index) in formatList" :key="index">
       <img :src="item.foto" :alt="user" />
     </div>
-    <div>+{{ count }}</div>
+    <div v-if="count >= 1">+{{ count }}</div>
   </div>
 </template>
 <style lang="scss" scoped>

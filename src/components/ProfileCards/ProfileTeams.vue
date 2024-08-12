@@ -43,14 +43,7 @@ const toggleRequest = (item) => roleClasses[item.role] || '';
 
 .container {
   .state {
-    cursor: pointer;
-    @include flex-center;
-    width: auto;
-    padding: 0.525rem;
-    height: 30px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    background: $purple-color; // Estilo por defecto
+    @include button-team-style;
   }
   .developer {
     @include design-developer;

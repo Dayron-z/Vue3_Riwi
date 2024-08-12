@@ -1,10 +1,11 @@
 <script setup>
+import ProjectCard from './ProjectCards/ProjectCard.vue';
+
 </script>
 
 <template>
     <div>
-      <h2>Projects Section</h2>
-      <p>Contenido de proyectos...</p>
+      <ProjectCard/>
     </div>
   </template>
   
