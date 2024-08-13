@@ -30,17 +30,16 @@
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/variable.scss';
-@import '@/assets/styles/mixins.scss'; 
-
+@import "@/assets/styles/variable.scss";
+@import "@/assets/styles/mixins.scss";
 
 .search-bar {
   padding: 0px 2.5rem;
   width: 100%;
   height: 3.125rem;
-  background-color:$primary-color;
+  background-color: $primary-color;
   border-radius: 5px;
-  @include box-shadow($shadow-color); 
+  @include box-shadow($shadow-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,22 +49,25 @@
     display: flex;
     align-items: center;
     flex: 1;
+    .search-input:focus + .right-icon {
+      opacity: 0;
+    }
   }
 
   .search-icon {
     position: absolute;
-    left: .625rem;
+    left: 0.625rem;
     color: $secondary-color;
     font-size: 1.25rem;
   }
 
   .search-input {
-    padding: 0 2.5rem 0 3rem; 
+    padding: 0 2.5rem 0 3rem;
     border: none;
     outline: none;
     font-size: 1rem;
     background-color: $primary-color;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     height: 2rem;
     flex: 1;
   }
@@ -73,7 +75,7 @@
   .right-icon {
     position: absolute;
     left: 110px;
-    top: 8px;
+    top: 5px;
     color: $secondary-color;
     font-size: 16px;
   }
@@ -90,6 +92,14 @@
       i {
         font-size: 1.25rem;
       }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .search-bar {
+    .right-icons {
+      display: none;
     }
   }
 }

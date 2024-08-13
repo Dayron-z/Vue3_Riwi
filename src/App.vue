@@ -10,7 +10,7 @@ import Team from './views/Team.vue';
 import Connections from './views/Connections.vue';
 
 // Definir estado reactivo
-const activeSection = ref('connections');
+const activeSection = ref('profile');
 
 const changeSection = (section) => {
   activeSection.value = section;
