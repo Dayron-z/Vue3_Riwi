@@ -25,4 +25,17 @@ import ConnectionCard from "../components/ConnectionsCards/ConnectionCard.vue";
   grid-template-columns: repeat(3, 1fr);
   gap: $general-gap;
 }
+
+@media (max-width: 1600px) {
+  .connections {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 1000px) {
+  .connections {
+  grid-template-columns: repeat(1, 1fr);
+}
+}
+
 </style>
