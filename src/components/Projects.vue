@@ -1,14 +1,29 @@
 <script setup>
-import ProjectCard from './ProjectCards/ProjectCard.vue';
-
+import ProjectCard from "./ProjectCards/ProjectCard.vue";
+import TeamCard from "./TeamCards/TeamCard.vue";
 </script>
 
 <template>
-    <div>
-      <ProjectCard/>
-    </div>
-  </template>
-  
+  <div class="project">
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+    <ProjectCard />
+  </div>
+</template>
+
 <style lang="scss" scoped>
-    
-</style>  
+@import "/src/assets/styles/variable";
+@import "/src/assets/styles/mixins";
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $general-gap;
+}
+</style>

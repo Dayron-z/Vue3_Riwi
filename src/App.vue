@@ -7,9 +7,10 @@ import Profile from './components/Profile.vue';
 import Navigation from './components/Navigation.vue';
 import Projects from './components/Projects.vue';
 import Team from './components/Team.vue';
+import Connections from './components/Connections.vue';
 
 // Definir estado reactivo
-const activeSection = ref('projects');
+const activeSection = ref('connections');
 
 const changeSection = (section) => {
   activeSection.value = section;
@@ -36,7 +37,7 @@ const changeSection = (section) => {
         <Projects />
       </div>
       <div v-if="activeSection === 'connections'">
-        <Connections />
+        <Connections/>
       </div>
     </section>
   </main>

@@ -54,6 +54,11 @@
   color: rgb(152, 155, 166);
 }
 
+@mixin design-green{
+  background-color:rgb(220, 247, 232) ;
+  color: rgb(77, 209, 137);
+}
+
 
 @mixin button-team-style() {
   cursor: pointer;

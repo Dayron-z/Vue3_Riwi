@@ -72,6 +72,7 @@ const props = defineProps({
 
           img {
             @include div-image-format;
+            object-fit: cover
           }
         }
       }

@@ -140,6 +140,7 @@ const progress = ref(50);
 
           img {
             @include div-image-format;
+            object-fit: cover;
           }
         }
       }

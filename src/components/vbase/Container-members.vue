@@ -42,6 +42,7 @@ const props = defineProps({
     border-radius: 100%;
     width: 99%;
     height: 99%;
+    object-fit: cover;
   }
 }
 </style>
