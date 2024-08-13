@@ -1,10 +1,10 @@
 <script setup>
-import ProfileAbout from "./ProfileCards/ProfileAbout.vue";
-import ProfileActivityTimeline from "./ProfileCards/ProfileActivityTimeline.vue";
-import ProfileConnection from "./ProfileCards/ProfileConnection.vue";
-import ProfileProjecList from "./ProfileCards/ProfileProjecList.vue";
-import ProfileTeams from "./ProfileCards/ProfileTeams.vue";
-import ProfileOverview from "./ProfileCards/ProfileOverview.vue";
+import ProfileAbout from "../components/ProfileCards/ProfileAbout.vue";
+import ProfileActivityTimeline from "../components/ProfileCards/ProfileActivityTimeline.vue";
+import ProfileConnection from "../components/ProfileCards/ProfileConnection.vue";
+import ProfileProjecList from "../components/ProfileCards/ProfileProjecList.vue";
+import ProfileTeams from "../components/ProfileCards/ProfileTeams.vue";
+import ProfileOverview from "../components/ProfileCards/ProfileOverview.vue";
 </script>
 
 <template>

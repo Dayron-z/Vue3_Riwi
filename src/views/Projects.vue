@@ -1,6 +1,6 @@
 <script setup>
-import ProjectCard from "./ProjectCards/ProjectCard.vue";
-import TeamCard from "./TeamCards/TeamCard.vue";
+import ProjectCard from "../components/ProjectCards/ProjectCard.vue";
+import TeamCard from "../components/TeamCards/TeamCard.vue";
 </script>
 
 <template>

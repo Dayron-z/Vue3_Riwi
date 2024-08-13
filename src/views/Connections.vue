@@ -1,5 +1,5 @@
 <script setup>
-import ConnectionCard from "./ConnectionsCards/ConnectionCard.vue";
+import ConnectionCard from "../components/ConnectionsCards/ConnectionCard.vue";
 </script>
 
 <template>

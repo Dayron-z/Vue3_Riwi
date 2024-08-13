@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import SearchBar from "./components/SearchBar.vue";
-import Banner from './components/Banner.vue';
-import Profile from './components/Profile.vue';
-import Navigation from './components/Navigation.vue';
-import Projects from './components/Projects.vue';
-import Team from './components/Team.vue';
-import Connections from './components/Connections.vue';
+import SearchBar from "./views/SearchBar.vue";
+import Banner from './views/Banner.vue';
+import Profile from './views/Profile.vue';
+import Navigation from './views/Navigation.vue';
+import Projects from './views/Projects.vue';
+import Team from './views/Team.vue';
+import Connections from './views/Connections.vue';
 
 // Definir estado reactivo
 const activeSection = ref('connections');

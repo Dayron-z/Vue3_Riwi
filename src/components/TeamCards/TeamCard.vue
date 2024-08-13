@@ -1,24 +1,38 @@
 <script setup>
 import { users, showUsers } from "@/assets/data/usersData";
-import { ref } from "vue";
+import { ref, defineProps} from "vue";
 import ContainerMembers from "../vbase/Container-members.vue";
 
 // Imagenes que deseo mostrar
 const numberOfImages = 3;
-
 // Data hasta donde la necesito
 const updatedData = showUsers(users, numberOfImages);
-
 // Data restante
 const count = ref(users.length - numberOfImages);
+//Prop
+const prop = defineProps({
+  
+technologyName: {
+    type: String,
+    default: "Technology"
+  },
+
+  imgSRC: {
+    type: String,
+    default: "/src/assets/images/defaultTeam.png"
+  }
+
+
+})
+
 </script>
 
 <template>
   <div class="card">
     <div class="header">
       <div class="left-section">
-        <img src="/src/assets/images/man_banner.jpg" alt="" />
-        <h4>React Developers</h4>
+        <img :src="imgSRC" alt="" />
+        <h4>{{ technologyName }}</h4>
       </div>
       <div class="right-section">
         <i class="bi bi-star"></i>

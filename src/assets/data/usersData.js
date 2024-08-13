@@ -51,17 +51,35 @@ const teams = [
         role: "Designer"
     },
     {
-        nombre: "React developers",
+        nombre: "Vue developers",
         foto: '/src/assets/images/vue.png',
         member: 123,
         role: "Developer"
     },
     {
-        nombre: "React developers",
+        nombre: "Python developers",
         foto: '/src/assets/images/python.png',
         member: 123,
         role: "Marketing"
     },
+    {
+        nombre: "UI Desginers",
+        foto: '/src/assets/images/figma.png',
+        member: 123,
+        role: "Support"
+    },
+    {
+        nombre: "Angular developers",
+        foto: '/src/assets/images/angular.png',
+        member: 123,
+        role: "Designer"
+    },
+    {
+        nombre: "Vue developers",
+        foto: '/src/assets/images/vue.png',
+        member: 123,
+        role: "Developer"
+    }
 ]
 
 

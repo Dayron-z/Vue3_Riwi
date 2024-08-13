@@ -1,26 +1,16 @@
 <script setup>
-import TeamCard from "./TeamCards/TeamCard.vue";
+import TeamCard from "../components/TeamCards/TeamCard.vue";
+import { teams } from "@/assets/data/usersData";
 </script>
 
 <template>
   <div class="team">
-    <TeamCard />
-    <TeamCard />
-    <TeamCard />
-    <TeamCard />
-    <TeamCard />
+    <TeamCard v-for="(team, index) in teams" :key="index"  :technology-name="team.nombre" :img-s-r-c="team.foto" />
     <TeamCard>
       <template v-slot:extra-topic>
         <div class="custom-slot-support"><span>Support</span></div>
       </template>
     </TeamCard>
-    <TeamCard>
-      <template v-slot:extra-topic>
-        <div class="custom-slot-support"><span>Support</span></div>
-      </template>
-    </TeamCard>
-    <TeamCard />
-    <TeamCard />
   </div>
 </template>
 
