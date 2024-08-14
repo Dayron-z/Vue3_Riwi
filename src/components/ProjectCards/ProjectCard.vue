@@ -4,25 +4,43 @@ import { ref } from "vue";
 import ContainerMembers from "../vbase/Container-members.vue";
 import InfoContainer from "../vbase/InfoContainer.vue";
 import Progress from "../vbase/Progress.vue";
-
 // Imagenes que deseo mostrar
 const numberOfImages = 3;
-
 // Data hasta donde la necesito
 const updatedData = showUsers(users, numberOfImages);
-
 // Data restante
 const count = ref(users.length - numberOfImages);
 const percentage = ref(80 );
+//Prop
+const prop = defineProps({
+  
+  nameProject: {
+      type: String,
+      default: "Technology"
+    },
+
+    client: {
+      type: String,
+      default: "Technology"
+    },
+  
+    imgSRC: {
+      type: String,
+      default: "/src/assets/images/defaultTeam.png"
+    }
+  
+  
+  })
+
 </script>
 
 <template>
   <div class="card">
     <div class="header">
       <div class="left-section">
-        <img src="/src/assets/images/man_banner.jpg" alt="" />
+        <img :src="imgSRC" alt="" />
         <div>
-          <h5>Social banners</h5>
+          <h5>{{ nameProject }}</h5>
           <div><span>Client: </span> <span>Christian Jimenez</span></div>
         </div>
       </div>

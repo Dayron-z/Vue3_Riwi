@@ -1,3 +1,16 @@
+<script setup>
+import { ref } from 'vue';
+
+// Definir las referencias reactivas
+const isActive = ref(false);
+const buttonText = ref('Connected');
+
+// Función para alternar el estado y el texto
+const toggleActive = () => {
+  isActive.value = !isActive.value;
+  buttonText.value = isActive.value ? 'Disconnected' : 'Connected';
+};
+</script>
 <template>
   <div class="banner_container">
     <div class="banner_up">
@@ -24,14 +37,13 @@
       </div>
 
       <div class="rigth_secction">
-        <div class="button">
-          <i class="bi bi-person-check"></i> <span>Connected </span>
+        <div class="button" :class="{ active: isActive }" @click="toggleActive">
+          <i class="bi bi-person-check"></i> <span>{{ buttonText }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup></script>
 <style lang="scss" scoped>
 @import "@/assets/styles/mixins";
 @import "@/assets/styles/variable";
@@ -100,6 +112,7 @@
     }
     .rigth_secction {
       .button {
+        cursor: pointer;
         color: $primary-color;
         gap: 10px;
         font-size: 13px;
@@ -113,6 +126,11 @@
         i {
           font-size: 20px;
         }
+      }
+
+      .button.active {
+        background-color: $shadow-color;
+        transition: 0.3ms;
       }
     }
   }
@@ -131,25 +149,30 @@
       justify-content: center;
       align-items: center;
       gap: 1.125rem;
-      .left_secction{
+      .left_secction {
         display: flex;
         flex-direction: column;
-        .info_secction{
+        .info_secction {
           order: 0;
         }
-        .profile_image{
+        .profile_image {
           order: 1;
           height: 30%;
-          img{
+          img {
             object-fit: contain;
-            border-radius:10px;
+            border-radius: 10px;
             width: 6.125rem;
           }
         }
-        .info_secction{
+        .info_secction {
           text-align: center;
-          .profile_info{
-            h5{display: flex; justify-content: center; flex-direction: column; align-items: center;}
+          .profile_info {
+            h5 {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;
+            }
           }
         }
       }

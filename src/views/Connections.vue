@@ -1,11 +1,17 @@
 <script setup>
 import ConnectionCard from "../components/ConnectionsCards/ConnectionCard.vue";
+import { users, showUsers } from "@/assets/data/usersData";
 const showCard = 9;
+const updatedData = showUsers(users, showCard)
+
+
+
+
 </script>
 
 <template>
   <div class="connections">
-    <ConnectionCard v-for="j in showCard" :key="j"/>
+    <ConnectionCard v-for="(item, index) in updatedData" :key="index"  :user-name="item.nombre" :area="item.area" :img-s-r-c="item.foto"/>
   </div>
 </template>
 

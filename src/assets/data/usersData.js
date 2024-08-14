@@ -4,29 +4,58 @@ const users = [
     {
         nombre: "Pepe",
         foto: '/src/assets/images/personaBase.png',
-        conexiones: 123
+        conexiones: 123,
+        area: "UI Designer"
     },
     {
         nombre: "Andres",
         foto: '/src/assets/images/persona1.png',
-        conexiones: 321
+        conexiones: 321,
+        area: "Developer"
     },
     {
         nombre: "Felipe",
         foto: '/src/assets/images/persona2.png',
-        conexiones: 521
+        conexiones: 521,
+        area: "UI Designer"
 
     },
     {
         nombre: "Javier",
         foto: '/src/assets/images/persona3.png',
-        conexiones: 621
+        conexiones: 621,
+        area: "Developer"
     },
     {
         nombre: "Javier",
         foto: '/src/assets/images/persona4.png',
-        conexiones: 621
+        conexiones: 621,
+        area: "UI Designer"
+    },
+    {
+        nombre: "Felipe",
+        foto: '/src/assets/images/persona4.png',
+        conexiones: 621,
+        area: "UI Designer"
+    },
+    {
+        nombre: "Camilo",
+        foto: '/src/assets/images/persona4.png',
+        conexiones: 621,
+        area: "UI Designer"
+    },
+    {
+        nombre: "Felipe",
+        foto: '/src/assets/images/persona4.png',
+        conexiones: 621,
+        area: "UI Designer"
+    },    {
+        nombre: "Pepe",
+        foto: '/src/assets/images/personaBase.png',
+        conexiones: 123,
+        area: "UI Designer"
     }
+
 ]
 
 
@@ -39,7 +68,7 @@ const teams = [
         role: "Developer"
     },
     {
-        nombre: "UI Desginers",
+        nombre: "UI Designers",
         foto: '/src/assets/images/figma.png',
         member: 123,
         role: "Support"
@@ -63,7 +92,7 @@ const teams = [
         role: "Marketing"
     },
     {
-        nombre: "UI Desginers",
+        nombre: "UI Designers",
         foto: '/src/assets/images/figma.png',
         member: 123,
         role: "Support"

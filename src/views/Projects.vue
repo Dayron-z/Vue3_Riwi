@@ -1,20 +1,11 @@
 <script setup>
 import ProjectCard from "../components/ProjectCards/ProjectCard.vue";
-import TeamCard from "../components/TeamCards/TeamCard.vue";
-const showCard = 9;
+const showCard = 6;
 </script>
 
 <template>
-  <div class="project" v-for="j in showCard" :key="j">
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
-    <ProjectCard />
+  <div class="project" >
+    <ProjectCard v-for="j in showCard" :key="j" />
   </div>
 </template>
 

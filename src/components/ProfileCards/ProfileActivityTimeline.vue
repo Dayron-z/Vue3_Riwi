@@ -80,6 +80,26 @@ const count = ref(users.length - numberOfImages);
       h5 {
         @include subtitle-format; 
       }
+      .image-pdf-container{
+        border-radius: 10px;
+        background: $shadow-button-color;
+        width: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        .bi-filetype-pdf{
+          height: 80%;
+          padding-bottom: 5px;
+          font-size: $icon-size ;
+          background: rgb(201, 6, 6);
+          border-radius: 3px;
+          color: rgb(255, 255, 255);
+        }
+        span{
+          color: $secondary-color;
+        }
+      }
       .client-container{
         display: flex;
         gap: 20px;  

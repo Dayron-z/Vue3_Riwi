@@ -11,6 +11,23 @@ const updatedData = showUsers(users, numberOfImages);
 // Data restante
 const count = ref(users.length - numberOfImages);
 const percentage = ref(80);
+
+//Prop
+const prop = defineProps({
+  userName: {
+    type: String,
+    default: "Andres",
+  },
+  area: {
+    type: String,
+    default: "UI Designer",
+  },
+
+  imgSRC: {
+    type: String,
+    default: "/src/assets/images/defaultTeam.png",
+  },
+});
 </script>
 
 <template>
@@ -19,10 +36,10 @@ const percentage = ref(80);
       <i class="bi bi-three-dots-vertical"></i>
     </div>
     <div class="content-main">
-      <img src="/src/assets/images/man_banner.jpg" alt="" />
+      <img :src="imgSRC" alt="" />
       <div class="description">
-        <h5>Mark Gilbert</h5>
-        <span>UI Designer</span>
+        <h5>{{ userName }}</h5>
+        <span>{{ area }}</span>
       </div>
       <div class="tech-stack">
         <div><span>Developer</span></div>
@@ -109,6 +126,7 @@ const percentage = ref(80);
       height: 5rem;
       border-radius: 100%;
       border: 2px solid $purple-color;
+      object-fit: cover;
     }
   }
   .card-footer {
