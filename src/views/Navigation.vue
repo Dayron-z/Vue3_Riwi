@@ -44,7 +44,6 @@ defineProps ({
 .buttons-container {
   max-width: 100%;
   display: flex;
-  justify-content: space-around;
   gap: 20px;
 
   button {
@@ -67,6 +66,7 @@ defineProps ({
 
 @media (max-width: 750px) {
   .buttons-container {
+    justify-content: space-around;
     button{
       i{font-size: $icon-size ;}
       span{display: none;}

@@ -1,10 +1,11 @@
 <script setup>
 import ProjectCard from "../components/ProjectCards/ProjectCard.vue";
 import TeamCard from "../components/TeamCards/TeamCard.vue";
+const showCard = 9;
 </script>
 
 <template>
-  <div class="project">
+  <div class="project" v-for="j in showCard" :key="j">
     <ProjectCard />
     <ProjectCard />
     <ProjectCard />
@@ -33,9 +34,12 @@ import TeamCard from "../components/TeamCards/TeamCard.vue";
 }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .project {
-  grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 }
 </style>
