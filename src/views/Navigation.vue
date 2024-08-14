@@ -42,10 +42,13 @@ defineProps ({
 
 
 .buttons-container {
+  max-width: 100%;
   display: flex;
+  justify-content: space-around;
   gap: 20px;
 
   button {
+    max-width: 100%;
     border: none;
     background-color: transparent;
     gap: 20px;
@@ -58,6 +61,15 @@ defineProps ({
     &.active {
       background-color: $purple-color; /* Color de fondo del botón activo */
       color: #fff; /* Color del texto del botón activo */
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .buttons-container {
+    button{
+      i{font-size: $icon-size ;}
+      span{display: none;}
     }
   }
 }

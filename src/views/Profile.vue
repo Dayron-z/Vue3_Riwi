@@ -21,7 +21,7 @@ import ProfileOverview from "../components/ProfileCards/ProfileOverview.vue";
         <ProfileConnection class="split" />
         <ProfileTeams class="split" />
       </div>
-      <ProfileProjecList />
+      <ProfileProjecList class="project-list" />
     </div>
   </div>
 </template>
@@ -56,4 +56,30 @@ import ProfileOverview from "../components/ProfileCards/ProfileOverview.vue";
     }
   }
 }
+
+@media (max-width: 1300px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    gap: $general-gap;
+    .left-section{
+      width: 100%;
+    }
+    .right-section{
+      width: 100%;
+      .min-section{
+        flex-direction: column;
+        .split {
+        width: 100%;
+      }
+      }
+      .project-list{
+        display: none;
+      }
+    }
+
+}
+}
+
+
 </style>
