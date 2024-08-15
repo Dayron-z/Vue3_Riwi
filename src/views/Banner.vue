@@ -1,15 +1,10 @@
 <script setup>
-import { ref } from 'vue';
+import Button from '@/components/vbase/Button.vue';
 
-// Definir las referencias reactivas
-const isActive = ref(false);
-const buttonText = ref('Connected');
 
-// Función para alternar el estado y el texto
-const toggleActive = () => {
-  isActive.value = !isActive.value;
-  buttonText.value = isActive.value ? 'Disconnected' : 'Connected';
-};
+
+
+
 </script>
 <template>
   <div class="banner_container">
@@ -37,9 +32,7 @@ const toggleActive = () => {
       </div>
 
       <div class="rigth_secction">
-        <div class="button" :class="{ active: isActive }" @click="toggleActive">
-          <i class="bi bi-person-check"></i> <span>{{ buttonText }}</span>
-        </div>
+       <Button/>
       </div>
     </div>
   </div>
@@ -111,27 +104,6 @@ const toggleActive = () => {
       }
     }
     .rigth_secction {
-      .button {
-        cursor: pointer;
-        color: $primary-color;
-        gap: 10px;
-        font-size: 13px;
-        border-radius: 10px;
-        background-color: $purple-color;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        i {
-          font-size: 20px;
-        }
-      }
-
-      .button.active {
-        background-color: $shadow-color;
-        transition: 0.3ms;
-      }
     }
   }
 }

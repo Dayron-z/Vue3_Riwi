@@ -10,8 +10,7 @@ const updatedData = showUsers(users, numberOfImages);
 // Data restante
 const count = ref(users.length - numberOfImages);
 //Prop
-const prop = defineProps({
-  
+const prop = defineProps({ 
 technologyName: {
     type: String,
     default: "Technology"
@@ -24,7 +23,10 @@ technologyName: {
 
 
 })
-
+const isActive = ref(false);
+const toggleActive = () => {
+  isActive.value = !isActive.value;
+}; 
 </script>
 
 <template>
@@ -35,7 +37,7 @@ technologyName: {
         <h4>{{ technologyName }}</h4>
       </div>
       <div class="right-section">
-        <i class="bi bi-star"></i>
+        <i class="bi bi-star" :class="{ active: isActive }" @click="toggleActive" ></i>
         <i class="bi bi-three-dots-vertical"></i>
       </div>
     </div>
@@ -90,6 +92,13 @@ technologyName: {
     .right-section {
       @include header-sections;
       font-size: $icon-size;
+      .bi-star{
+        cursor: pointer;
+      }
+
+      .bi-star.active{
+        color: yellow;
+      }
     }
   }
 

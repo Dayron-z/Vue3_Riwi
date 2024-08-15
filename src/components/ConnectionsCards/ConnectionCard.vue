@@ -1,6 +1,7 @@
 <script setup>
 import { users, showUsers } from "@/assets/data/usersData";
 import { ref } from "vue";
+import Button from "../vbase/Button.vue";
 
 // Imagenes que deseo mostrar
 const numberOfImages = 3;
@@ -63,9 +64,7 @@ const prop = defineProps({
         </div>
       </div>
       <div class="buttons-footer">
-        <div class="button">
-          <i class="bi bi-person-add"></i><span>Connected</span>
-        </div>
+        <Button/>
         <div class="message"><i class="bi bi-envelope"></i></div>
       </div>
     </div>
@@ -148,21 +147,6 @@ const prop = defineProps({
       display: flex;
       align-items: center;
       gap: $general-gap;
-      .button {
-        color: $primary-color;
-        gap: 10px;
-        font-size: 13px;
-        border-radius: 0.425rem;
-        background-color: $purple-color;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        i {
-          font-size: 20px;
-        }
-      }
       .message {
         padding: 10px;
         border-radius: 0.425rem;
